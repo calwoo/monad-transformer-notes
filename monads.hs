@@ -1,6 +1,7 @@
 -- I'm fairly comfortable with monads. But I should really memorize the ones people use, in addition to the
 -- mathematical definitions I'm most familiar with.
 
+import Data.Char
 
 {- class Monad m where
     return :: a -> m a
@@ -84,4 +85,18 @@ eitherComposed input = do
     either3 f
 
 
--- IO MONAD
+-- IO MONAD -- this is a wrapper for all computations that perform side effects
+-- as an example
+
+main :: IO ()
+main = do
+    -- getLine :: IO String
+    input <- getLine
+    let uppercased = map Data.Char.toUpper input
+    -- print :: String -> IO ()
+    print uppercased
+
+
+
+
+
